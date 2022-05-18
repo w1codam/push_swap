@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:18:23 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 09:39:57 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/18 10:38:57 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	parse(argc, argv, &stack_a);
+	print_stack(stack_a);
+	rra(&stack_a);
 	print_stack(stack_a);
 }

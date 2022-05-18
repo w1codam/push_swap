@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:21:19 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 09:47:08 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/18 10:07:09 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_node {
 
 // node.c
 t_node	*create_node(int _number);
+void	add_front(t_node **head, t_node *node);
 void	add_back(t_node **head, t_node *node);
 void	clear_list(t_node *head);
 
