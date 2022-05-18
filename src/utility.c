@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/18 09:00:52 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 09:33:23 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/18 09:45:26 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,11 @@ int	ft_atoi(const char *str)
 
 void	print_stack(t_node *head)
 {
-	printf("printing stack\n");
-	printf("=============================\n");
+	printf("======= printing stack =======\n");
 	while (head)
 	{
 		printf("%d\t: %d \n", head->index, head->number);
 		head = head->next;
 	}
-	printf("=============================\n");
+	printf("==============================\n");
 }

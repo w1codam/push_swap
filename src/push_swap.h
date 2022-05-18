@@ -6,19 +6,21 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:21:19 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 09:26:17 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/18 09:47:08 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <stdio.h> // development
 # include <stdlib.h>
+# include <stdbool.h>
 
 typedef struct s_node {
 	int		index;
 	int		number;
-	t_node	*next;
+	void	*next;
 }			t_node;
 
 // node.c
@@ -31,7 +33,8 @@ int		ft_atoi(const char *str);
 void	print_stack(t_node *head);
 
 // parse.c
-
+bool	validate(int argc, char **argv);
+bool	parse(int argc, char **argv, t_node **head);
 
 // operations.c
 void	sa(t_node **stack);

@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:46:31 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 09:28:31 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/18 09:43:53 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,16 @@ t_node	*create_node(int _number)
 
 void	add_back(t_node **head, t_node *node)
 {
+	t_node	*tmp;
+
 	if (!(*head))
 		*head = node;
 	else
 	{
-		while ((*head)->next)
-			(*head) = (*head)->next;
-		(*head)->next = node;
+		tmp = (*head);
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = node;
 	}
 }
 
