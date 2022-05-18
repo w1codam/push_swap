@@ -2,7 +2,14 @@ NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -fsanitize=address
 
-SRC =	./src/main.c
+SRC =	./src/main.c \
+		./src/parse.c \
+		./src/node.c \
+		./src/utility.c \
+		./src/operations/push.c \
+		./src/operations/swap.c \
+		./src/operations/rotate.c \
+		./src/operations/reverse.c
 
 OBJ = ${SRC:%.c=%.o}
 
