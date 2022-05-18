@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/18 09:00:52 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 09:45:26 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/18 14:31:10 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,40 @@ void	print_stack(t_node *head)
 		head = head->next;
 	}
 	printf("==============================\n");
+}
+
+int	find_smallest(t_node *stack)
+{
+	int		pos;
+	int		index;
+	int		smallest;
+
+	pos = 0;
+	index = 0;
+	smallest = stack->number;
+	stack = stack->next;
+	while (stack)
+	{
+		index++;
+		if (smallest > stack->number)
+			pos = index;
+		stack = stack->next;
+	}
+	return (pos);
+}
+
+bool	is_sorted(t_node *stack)
+{
+	int	prev;
+
+	prev = stack->number;
+	stack = stack->next;
+	while (stack)
+	{
+		if (prev > stack->number)
+			return (false);
+		prev = stack->number;
+		stack = stack->next;
+	}
+	return (true);
 }

@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/18 09:11:27 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 10:40:50 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/18 12:06:34 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 static void	rev(t_node **stack)
 {
-	t_node	*old_head;
+	t_node	*prv;
 	t_node	*tmp;
 
 	if (!(*stack) || !(*stack)->next)
 		return ;
 
-	old_head = (*stack);
-	(*stack) = (*stack)->next;
-	tmp = (*stack);
+	prv = (*stack);
+	tmp = (*stack)->next;
 	while (tmp->next)
+	{
+		prv = tmp;
 		tmp = tmp->next;
-	tmp->next = old_head;
-	old_head->next = NULL;
+	}
+	prv->next = NULL;
+	tmp->next = (*stack);
+	(*stack) = tmp;
 }
 
 void	rra(t_node **stack)

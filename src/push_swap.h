@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:21:19 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 10:07:09 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/18 14:20:18 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdbool.h>
 
 typedef struct s_node {
+	int		position;
 	int		index;
 	int		number;
 	void	*next;
@@ -32,6 +33,8 @@ void	clear_list(t_node *head);
 // utility.c
 int		ft_atoi(const char *str);
 void	print_stack(t_node *head);
+int		find_smallest(t_node *stack);
+bool	is_sorted(t_node *stack);
 
 // parse.c
 bool	validate(int argc, char **argv);
@@ -52,5 +55,11 @@ void	rr(t_node **stack_a, t_node **stack_b);
 void	rra(t_node **stack);
 void	rrb(t_node **stack);
 void	rrr(t_node **stack_a, t_node **stack_b);
+
+// fixed sorts
+void	fs_two(t_node **stack);
+void	fs_three(t_node **stack);
+void	fs_four(t_node **stack_a, t_node **stack_b);
+void	fs_five(t_node **stack_a, t_node **stack_b);
 
 #endif

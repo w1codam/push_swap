@@ -7,6 +7,7 @@ SRC =	./src/main.c \
 		./src/parse.c \
 		./src/node.c \
 		./src/utility.c \
+		./src/fixed.c \
 		./src/operations/push.c \
 		./src/operations/swap.c \
 		./src/operations/rotate.c \
