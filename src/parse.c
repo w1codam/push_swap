@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:41:58 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/19 14:26:44 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/19 14:29:04 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ bool	parse(int argc, char **argv, t_node **head)
 	index = 1;
 	while (index < argc)
 	{
+		if (is_duplicate(*head, ft_atoi(argv[index])))
+			ex_err();
 		tmp = create_node(ft_atoi(argv[index]));
 		add_back(head, tmp);
 		index++;

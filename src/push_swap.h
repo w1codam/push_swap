@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:21:19 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/19 14:22:05 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/19 14:35:58 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdio.h> // development
 # include <stdlib.h>
+# include <unistd.h>
+# include <cstdlib>
 # include <stdbool.h>
 
 typedef struct s_node {
@@ -70,5 +72,8 @@ void	perpare(t_node **stack_a, t_node **stack_b);
 
 // radix.c
 void	radix(t_node **stack_a, t_node **stack_b);
+
+// error.c
+void	error(t_node **head);
 
 #endif
