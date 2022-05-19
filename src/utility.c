@@ -6,17 +6,17 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/18 09:00:52 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/19 13:11:02 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/19 14:56:20 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
-	int	result;
-	int	negative;
-	int	index;
+	long	result;
+	long	negative;
+	long	index;
 
 	negative = 1;
 	result = 0;
@@ -35,18 +35,6 @@ int	ft_atoi(const char *str)
 		index++;
 	}
 	return (result * negative);
-}
-
-void	print_stack(t_node *head)
-{
-	printf("======= printing stack =======\n");
-	while (head)
-	{
-		printf("index: %d\t position: %d\t number: %d \n", \
-		head->index, head->position, head->number);
-		head = head->next;
-	}
-	printf("==============================\n");
 }
 
 int	find_smallest(t_node *stack, unsigned int offset)

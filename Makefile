@@ -10,6 +10,7 @@ SRC =	./src/main.c \
 		./src/fixed.c \
 		./src/prepare.c \
 		./src/radix.c \
+		./src/error.c \
 		./src/operations/push.c \
 		./src/operations/swap.c \
 		./src/operations/rotate.c \

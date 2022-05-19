@@ -6,17 +6,17 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:21:19 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/19 14:35:58 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/19 14:54:42 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h> // development
 # include <stdlib.h>
 # include <unistd.h>
-# include <cstdlib>
+# include <stdlib.h>
+# include <limits.h>
 # include <stdbool.h>
 
 typedef struct s_node {
@@ -34,14 +34,13 @@ t_node	*remove_node(t_node **head, int index);
 void	clear_list(t_node *head);
 
 // utility.c
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 void	print_stack(t_node *head);
 int		find_smallest(t_node *stack, unsigned int offset);
 void	*get_pointer(t_node *node, unsigned int offset);
 bool	is_sorted(t_node *stack, unsigned int offset);
 
 // parse.c
-bool	validate(int argc, char **argv);
 bool	parse(int argc, char **argv, t_node **head);
 
 // operations.c
@@ -74,6 +73,6 @@ void	perpare(t_node **stack_a, t_node **stack_b);
 void	radix(t_node **stack_a, t_node **stack_b);
 
 // error.c
-void	error(t_node **head);
+void	error(t_node *head);
 
 #endif

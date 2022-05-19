@@ -6,11 +6,20 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:41:58 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/19 14:29:04 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/19 14:55:25 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static bool	is_outofrange(long number)
+{
+	if (number > (long)INT_MAX)
+		return (true);
+	else if (number < (long)INT_MIN)
+		return (true);
+	return (false);
+}
 
 static bool	is_duplicate(t_node *stack, int number)
 {
@@ -23,9 +32,9 @@ static bool	is_duplicate(t_node *stack, int number)
 	return (false);
 }
 
-bool	validate(int argc, char **argv)
+static bool	is_notanumber(char *number)
 {
-	return (true);
+	return (false);
 }
 
 bool	parse(int argc, char **argv, t_node **head)
@@ -33,15 +42,20 @@ bool	parse(int argc, char **argv, t_node **head)
 	int		index;
 	t_node	*tmp;
 
-	if (!validate(argc, argv))
-		return (false);
 	index = 1;
 	while (index < argc)
 	{
-		if (is_duplicate(*head, ft_atoi(argv[index])))
-			ex_err();
-		tmp = create_node(ft_atoi(argv[index]));
+		if (is_notanumber(argv[index]))
+			return (false);
+		if (is_outofrange(ft_atoi(argv[index])))
+			return (false);
+		if (is_duplicate(*head, (int)ft_atoi(argv[index])))
+			return (false);
+		tmp = create_node((int)ft_atoi(argv[index]));
+		if (!tmp)
+			return (false);
 		add_back(head, tmp);
 		index++;
 	}
+	return (true);
 }
