@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:21:19 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/19 14:54:42 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/19 14:57:56 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_node	*remove_node(t_node **head, int index);
 void	clear_list(t_node *head);
 
 // utility.c
-long	ft_atoi(const char *str);
+long	ft_atol(const char *str);
 void	print_stack(t_node *head);
 int		find_smallest(t_node *stack, unsigned int offset);
 void	*get_pointer(t_node *node, unsigned int offset);
