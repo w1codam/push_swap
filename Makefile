@@ -8,6 +8,8 @@ SRC =	./src/main.c \
 		./src/node.c \
 		./src/utility.c \
 		./src/fixed.c \
+		./src/prepare.c \
+		./src/radix.c \
 		./src/operations/push.c \
 		./src/operations/swap.c \
 		./src/operations/rotate.c \

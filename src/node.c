@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:46:31 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 10:18:27 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/19 12:22:01 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,29 @@ void	add_back(t_node **head, t_node *node)
 			tmp = tmp->next;
 		tmp->next = node;
 	}
+}
+
+t_node	*remove_node(t_node **head, int index)
+{
+	t_node	*tmp;
+	t_node	*prev;
+
+	tmp = (*head);
+	if (index == 0)
+	{
+		(*head) = (*head)->next;
+		tmp->next = NULL;
+		return (tmp);
+	}
+	while (index)
+	{
+		index--;
+		prev = tmp;
+		tmp = tmp->next;
+	}
+	prev->next = tmp->next;
+	tmp->next = NULL;
+	return (tmp);
 }
 
 void	clear_list(t_node *head)

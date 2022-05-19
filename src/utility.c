@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/18 09:00:52 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 14:31:10 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/19 13:11:02 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,14 @@ void	print_stack(t_node *head)
 	printf("======= printing stack =======\n");
 	while (head)
 	{
-		printf("%d\t: %d \n", head->index, head->number);
+		printf("index: %d\t position: %d\t number: %d \n", \
+		head->index, head->position, head->number);
 		head = head->next;
 	}
 	printf("==============================\n");
 }
 
-int	find_smallest(t_node *stack)
+int	find_smallest(t_node *stack, unsigned int offset)
 {
 	int		pos;
 	int		index;
@@ -56,29 +57,37 @@ int	find_smallest(t_node *stack)
 
 	pos = 0;
 	index = 0;
-	smallest = stack->number;
+	smallest = *((int *)get_pointer(stack, offset));
 	stack = stack->next;
 	while (stack)
 	{
 		index++;
-		if (smallest > stack->number)
+		if (smallest > *((int *)get_pointer(stack, offset)))
+		{
+			smallest = *((int *)get_pointer(stack, offset));
 			pos = index;
+		}
 		stack = stack->next;
 	}
 	return (pos);
 }
 
-bool	is_sorted(t_node *stack)
+void	*get_pointer(t_node *node, unsigned int offset)
+{
+	return (&(((char *)node)[offset]));
+}
+
+bool	is_sorted(t_node *stack, unsigned int offset)
 {
 	int	prev;
 
-	prev = stack->number;
+	prev = *((int *)get_pointer(stack, offset));
 	stack = stack->next;
 	while (stack)
 	{
-		if (prev > stack->number)
+		if (prev > *((int *)get_pointer(stack, offset)))
 			return (false);
-		prev = stack->number;
+		prev = *((int *)get_pointer(stack, offset));
 		stack = stack->next;
 	}
 	return (true);

@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:18:23 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 14:34:32 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/19 14:25:13 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	parse(argc, argv, &stack_a);
-	print_stack(stack_a);
-	fs_five(&stack_a, &stack_b);
-	print_stack(stack_a);
+	if (argc <= 6)
+		fs(&stack_a, &stack_b, argc - 1);
+	else
+	{
+		perpare(&stack_a, &stack_b);
+		radix(&stack_a, &stack_b);
+	}
+	clear_list(stack_a);
 }

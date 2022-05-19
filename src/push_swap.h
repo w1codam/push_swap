@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:21:19 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 14:20:18 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/19 14:22:05 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ typedef struct s_node {
 t_node	*create_node(int _number);
 void	add_front(t_node **head, t_node *node);
 void	add_back(t_node **head, t_node *node);
+t_node	*remove_node(t_node **head, int index);
 void	clear_list(t_node *head);
 
 // utility.c
 int		ft_atoi(const char *str);
 void	print_stack(t_node *head);
-int		find_smallest(t_node *stack);
-bool	is_sorted(t_node *stack);
+int		find_smallest(t_node *stack, unsigned int offset);
+void	*get_pointer(t_node *node, unsigned int offset);
+bool	is_sorted(t_node *stack, unsigned int offset);
 
 // parse.c
 bool	validate(int argc, char **argv);
@@ -56,10 +58,17 @@ void	rra(t_node **stack);
 void	rrb(t_node **stack);
 void	rrr(t_node **stack_a, t_node **stack_b);
 
-// fixed sorts
+// fixed.c
 void	fs_two(t_node **stack);
 void	fs_three(t_node **stack);
 void	fs_four(t_node **stack_a, t_node **stack_b);
 void	fs_five(t_node **stack_a, t_node **stack_b);
+void	fs(t_node **stack_a, t_node **stack_b, int size);
+
+// prepare.c
+void	perpare(t_node **stack_a, t_node **stack_b);
+
+// radix.c
+void	radix(t_node **stack_a, t_node **stack_b);
 
 #endif

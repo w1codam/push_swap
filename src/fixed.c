@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/18 11:05:19 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/18 14:31:22 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/19 12:40:46 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,19 @@ void	fs_three(t_node **stack)
 
 void	fs_four(t_node **stack_a, t_node **stack_b)
 {
-	if (find_smallest(*stack_a) == 1)
+	if (find_smallest(*stack_a, (void *)&(*stack_a)->number \
+	- (void *)(*stack_a)) == 1)
 		sa(stack_a);
-	else if (find_smallest(*stack_a) == 3)
+	else if (find_smallest(*stack_a, (void *)&(*stack_a)->number \
+	- (void *)(*stack_a)) == 3)
 		rra(stack_a);
-	else if (find_smallest(*stack_a) == 2)
+	else if (find_smallest(*stack_a, (void *)&(*stack_a)->number \
+	- (void *)(*stack_a)) == 2)
 	{
 		ra(stack_a);
 		sa(stack_a);
 	}
-	if (is_sorted(*stack_a))
+	if (is_sorted(*stack_a, (void *)&(*stack_a)->number - (void *)(*stack_a)))
 		return ;
 	pb(stack_a, stack_b);
 	fs_three(stack_a);
@@ -68,23 +71,39 @@ void	fs_four(t_node **stack_a, t_node **stack_b)
 
 void	fs_five(t_node **stack_a, t_node **stack_b)
 {
-	if (find_smallest(*stack_a) == 1)
+	if (find_smallest(*stack_a, (void *)&(*stack_a)->number \
+	- (void *)(*stack_a)) == 1)
 		sa(stack_a);
-	else if (find_smallest(*stack_a) == 2)
+	else if (find_smallest(*stack_a, (void *)&(*stack_a)->number \
+	- (void *)(*stack_a)) == 2)
 	{
 		ra(stack_a);
 		ra(stack_a);
 	}
-	else if (find_smallest(*stack_a) == 3)
+	else if (find_smallest(*stack_a, (void *)&(*stack_a)->number \
+	- (void *)(*stack_a)) == 3)
 	{
 		rra(stack_a);
 		rra(stack_a);
 	}
-	else if (find_smallest(*stack_a) == 4)
+	else if (find_smallest(*stack_a, (void *)&(*stack_a)->number \
+	- (void *)(*stack_a)) == 4)
 		rra(stack_a);
-	if (is_sorted(*stack_a))
+	if (is_sorted(*stack_a, (void *)&(*stack_a)->number - (void *)(*stack_a)))
 		return ;
 	pb(stack_a, stack_b);
 	fs_four(stack_a, stack_b);
 	pa(stack_a, stack_b);
+}
+
+void	fs(t_node **stack_a, t_node **stack_b, int size)
+{
+	if (size == 5)
+		fs_five(stack_a, stack_b);
+	else if (size == 4)
+		fs_four(stack_a, stack_b);
+	else if (size == 3)
+		fs_three(stack_a);
+	else if (size == 2)
+		fs_two(stack_a);
 }
