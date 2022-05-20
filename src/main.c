@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:18:23 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/20 10:48:48 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/20 11:03:25 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,15 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
+	if (argc == 1)
+		exit(EXIT_SUCCESS);
 	if (!parse(argc, argv, &stack_a))
 		error(stack_a);
+	if (is_sorted(stack_a, (void *)&(stack_a)->number - (void *)(stack_a)))
+	{
+		clear_list(stack_a);
+		exit(EXIT_SUCCESS);
+	}
 	if (argc <= 6)
 		fs(&stack_a, &stack_b, argc - 1);
 	else
