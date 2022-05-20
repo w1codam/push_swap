@@ -6,11 +6,11 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/18 11:05:19 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/19 12:40:46 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/20 12:07:40 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	fs_two(t_node **stack)
 {

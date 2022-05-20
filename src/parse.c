@@ -6,11 +6,11 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:41:58 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/20 11:02:16 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/20 12:07:51 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 static bool	is_outofrange(long number)
 {

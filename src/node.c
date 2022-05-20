@@ -6,11 +6,11 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:46:31 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/19 12:22:01 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/20 12:07:47 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 t_node	*create_node(int _number)
 {

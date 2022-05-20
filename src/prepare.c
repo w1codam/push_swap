@@ -6,11 +6,11 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/19 14:21:09 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/20 10:48:23 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/20 12:07:54 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 static void	set_order(t_node *stack, unsigned int offset)
 {

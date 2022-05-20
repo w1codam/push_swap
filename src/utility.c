@@ -6,11 +6,11 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/18 09:00:52 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/19 14:56:20 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/20 12:08:02 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 long	ft_atol(const char *str)
 {
