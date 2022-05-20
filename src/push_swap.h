@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:21:19 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/19 14:57:56 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/20 10:48:04 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	fs_five(t_node **stack_a, t_node **stack_b);
 void	fs(t_node **stack_a, t_node **stack_b, int size);
 
 // prepare.c
-void	perpare(t_node **stack_a, t_node **stack_b);
+void	perpare(t_node **stack);
 
 // radix.c
 void	radix(t_node **stack_a, t_node **stack_b);

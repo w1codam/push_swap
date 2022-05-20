@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/19 14:21:09 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/19 14:24:41 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/20 10:48:23 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ static void	set_order(t_node *stack, unsigned int offset)
 
 static void	sort(t_node **stack, unsigned int offset)
 {
-	int		current;
-	int		next;
 	t_node	*new;
 
 	new = NULL;
@@ -37,10 +35,10 @@ static void	sort(t_node **stack, unsigned int offset)
 	*stack = new;
 }
 
-void	perpare(t_node **stack_a, t_node **stack_b)
+void	perpare(t_node **stack)
 {
-	set_order(*stack_a, (void *)&(*stack_a)->position - (void *)(*stack_a));
-	sort(stack_a, (void *)&(*stack_a)->number - (void *)(*stack_a));
-	set_order(*stack_a, (void *)&(*stack_a)->index - (void *)(*stack_a));
-	sort(stack_a, (void *)&(*stack_a)->position - (void *)(*stack_a));
+	set_order(*stack, (void *)&(*stack)->position - (void *)(*stack));
+	sort(stack, (void *)&(*stack)->number - (void *)(*stack));
+	set_order(*stack, (void *)&(*stack)->index - (void *)(*stack));
+	sort(stack, (void *)&(*stack)->position - (void *)(*stack));
 }

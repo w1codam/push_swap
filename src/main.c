@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 12:18:23 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/19 14:53:23 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/20 10:48:48 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 		fs(&stack_a, &stack_b, argc - 1);
 	else
 	{
-		perpare(&stack_a, &stack_b);
+		perpare(&stack_a);
 		radix(&stack_a, &stack_b);
 	}
 	clear_list(stack_a);
