@@ -1,7 +1,6 @@
 NAME = push_swap
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address
-# CFLAGS = -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra
 
 SRC =	./src/main.c \
 		./src/parse.c \
