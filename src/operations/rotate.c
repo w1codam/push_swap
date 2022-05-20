@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/18 09:11:30 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/20 12:08:56 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/20 12:28:23 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static void	r(t_node **stack)
 
 	if (!(*stack) || !(*stack)->next)
 		return ;
-
 	old_head = *stack;
 	(*stack) = old_head->next;
 	tmp = old_head;

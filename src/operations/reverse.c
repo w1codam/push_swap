@@ -6,7 +6,7 @@
 /*   By: jde-groo <jde-groo@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/18 09:11:27 by jde-groo      #+#    #+#                 */
-/*   Updated: 2022/05/20 12:08:52 by jde-groo      ########   odam.nl         */
+/*   Updated: 2022/05/20 12:28:15 by jde-groo      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static void	rev(t_node **stack)
 
 	if (!(*stack) || !(*stack)->next)
 		return ;
-
 	prv = (*stack);
 	tmp = (*stack)->next;
 	while (tmp->next)
